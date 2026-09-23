@@ -24,7 +24,7 @@ const $ = <T extends HTMLElement>(selector: string) => document.querySelector<T>
 const form = $("#booking-form") as HTMLFormElement | null;
 const dateInput = $("#booking-date") as HTMLInputElement | null;
 const timeSelect = $("#booking-time") as HTMLSelectElement | null;
-const barberSelect = $("#booking-barber") as HTMlSelectElement | null;
+const barberSelect = $("#booking-barber") as HTMLSelectElement | null;
 const status = $("#booking-status");
 
 function setStatus(message: string, kind: "ok" | "error" | "muted" = "muted") {
