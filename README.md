@@ -19,18 +19,18 @@ This branch reconstructs the **September 2026 Astra website baseline** and inten
 
 1. `npm install`
 2. `npm run check`
-3. Apply `supabase/migrations/001_hairmagic_website.sql` to the `hairmagic-website` Supabase project.
-4. Copy `public/runtime-config.js` values into the deployment environment/build step using the public Supabase URL and **anon key only**.
-5. Create Owner users in Supabase Auth and set `app_metadata.role = "owner"` using a trusted admin/server context. Never expose the service-role key in this repository or browser.
+3. Production Supabase already contains the Astra foundation migrations plus `20260923022409 public_rpc_bridge`. Do not re-create the schema from scratch.
+4. `public/runtime-config.js` points to the `hairmagic-website` project using its public publishable key. Never put a service-role/secret key in browser code.
+5. Owner authorization uses the production `owner_accounts` membership table plus Supabase Auth. Add an Auth user to `owner_accounts` only from a trusted admin/database context.
 
 ## Security model
 
 - Public visitors cannot read booking customer data.
-- Public booking uses `public_create_booking()` (SECURITY DEFINER) so capacity and minimum lead time are enforced in PostgreSQL, not only in JavaScript.
-- Public availability exposes counts only, never customer identity.
-- Ratings are anonymous by schema: there are no name/phone columns.
-- Media is publicly readable only from the dedicated `website-media` bucket; writes require authenticated Owner role.
-- Owner reports require an authenticated JWT with `app_metadata.role = owner`.
+- Public booking calls `hm_create_booking(jsonb)`. The public wrapper is SECURITY INVOKER and delegates validated privileged work to a helper in the non-exposed `private` schema, so capacity and minimum lead time are enforced in PostgreSQL, not only in JavaScript.
+- Public availability uses `hm_active_bookings(date)` and exposes only barber/slot occupancy needed to calculate remaining capacity, never customer identity.
+- Feedback is anonymous by schema: there are no name/phone columns, and public submission goes through `hm_submit_feedback(jsonb)`.
+- Published media uses the existing public `hairmagic-media` bucket; media writes require an authenticated user who is present in `owner_accounts`.
+- Owner access is authorized by Supabase Auth plus membership in the production `owner_accounts` table; authorization does not trust user-editable metadata.
 
 ## Recovery status
 

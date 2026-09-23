@@ -3,16 +3,14 @@ import { config, isSupabaseConfigured } from "../config.js";
 export type Session = {
   access_token: string;
   refresh_token?: string;
-  user?: { email?: string; app_metadata?: Record<string, unknown> };
+  user?: { id?: string; email?: string };
 };
 
 const storageKey = "hairmagic_owner_session";
 
 function headers(token?: string, json = true): HeadersInit {
-  const h: Record<string, string> = {
-    apikey: config.supabaseAnonKey,
-    Authorization: `Bearer ${token || config.supabaseAnonKey}`
-  };
+  const h: Record<string, string> = { apikey: config.supabasePublishableKey };
+  if (token) h.Authorization = `Bearer ${token}`;
   if (json) h["Content-Type"] = "application/json";
   return h;
 }
@@ -59,9 +57,13 @@ export function clearSession(): void {
   sessionStorage.removeItem(storageKey);
 }
 
-export async function uploadMedia(path: string, file: File, token: string): Promise<void> {
+function storageObjectPath(bucket: string, path: string): string {
+  return `${encodeURIComponent(bucket)}/${path.split("/").map(encodeURIComponent).join("/")}`;
+}
+
+export async function uploadMedia(bucket: string, path: string, file: File, token: string): Promise<void> {
   if (!isSupabaseConfigured()) throw new Error("Supabase belum dikonfigurasi.");
-  const res = await fetch(`${config.supabaseUrl}/storage/v1/object/website-media/${encodeURIComponent(path)}`, {
+  const res = await fetch(`${config.supabaseUrl}/storage/v1/object/${storageObjectPath(bucket, path)}`, {
     method: "POST",
     headers: {
       ...headers(token, false),
@@ -76,10 +78,9 @@ export async function uploadMedia(path: string, file: File, token: string): Prom
   }
 }
 
-export async function deleteMediaObject(path: string, token: string): Promise<void> {
+export async function deleteMediaObject(bucket: string, path: string, token: string): Promise<void> {
   if (!isSupabaseConfigured()) throw new Error("Supabase belum dikonfigurasi.");
-  const objectPath = path.split("/").map(encodeURIComponent).join("/");
-  const res = await fetch(`${config.supabaseUrl}/storage/v1/object/website-media/${objectPath}`, {
+  const res = await fetch(`${config.supabaseUrl}/storage/v1/object/${storageObjectPath(bucket, path)}`, {
     method: "DELETE",
     headers: headers(token, false)
   });
@@ -89,6 +90,6 @@ export async function deleteMediaObject(path: string, token: string): Promise<vo
   }
 }
 
-export function publicMediaUrl(path: string): string {
-  return `${config.supabaseUrl}/storage/v1/object/public/website-media/${path.split("/").map(encodeURIComponent).join("/")}`;
+export function publicMediaUrl(bucket: string, path: string): string {
+  return `${config.supabaseUrl}/storage/v1/object/public/${storageObjectPath(bucket, path)}`;
 }

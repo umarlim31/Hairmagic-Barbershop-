@@ -4,6 +4,14 @@ import { rpc } from "./lib/supabase.js";
 const form = document.querySelector<HTMLFormElement>("#feedback-form");
 const status = document.querySelector<HTMLElement>("#feedback-status");
 
+function todayWita(): string {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Makassar", year: "numeric", month: "2-digit", day: "2-digit"
+  }).formatToParts(new Date());
+  const map = Object.fromEntries(parts.map(part => [part.type, part.value]));
+  return `${map.year}-${map.month}-${map.day}`;
+}
+
 form?.addEventListener("submit", async event => {
   event.preventDefault();
   if (!isSupabaseConfigured()) {
@@ -11,12 +19,17 @@ form?.addEventListener("submit", async event => {
     return;
   }
   const data = new FormData(form);
+  const category = String(data.get("category") || "lainnya");
+  const rawMessage = String(data.get("message") || "").trim();
+  const message = rawMessage ? `[${category}] ${rawMessage}` : `[${category}]`;
   try {
-    await rpc("public_submit_rating", {
-      p_rating: Number(data.get("rating")),
-      p_category: String(data.get("category") || "lainnya"),
-      p_message: String(data.get("message") || "").trim() || null,
-      p_source: new URLSearchParams(location.search).get("source") === "qr" ? "qr" : "website"
+    await rpc<void>("hm_submit_feedback", {
+      payload: {
+        id: crypto.randomUUID(),
+        rating: Number(data.get("rating")),
+        message,
+        submitted_day: todayWita()
+      }
     });
     form.reset();
     if (status) status.textContent = "Terima kasih. Penilaianmu sudah terkirim secara anonim.";
