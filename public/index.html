@@ -2,8 +2,9 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Hairmagic Barbershop — gaya punya kamu, magic dari kami. Booking haircut, coloring, perm, dan perawatan rambut.">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#05070b">
+  <meta name="description" content="Hairmagic Barbershop — Gaya punya kamu. Magic dari kami. Booking haircut, coloring, perm, dan perawatan rambut.">
   <title>Hairmagic Barbershop</title>
   <link rel="stylesheet" href="./assets/styles.css">
   <script src="./runtime-config.js"></script>
@@ -11,15 +12,243 @@
 </head>
 <body>
 <a class="skip" href="#content">Langsung ke konten</a>
-<header class="site-header"><a class="brand" href="#top"><b>HAIRMAGIC</b><span>. BARBERSHOP</span></a><nav><a href="#layanan">Layanan</a><a href="#booking">Booking</a><a href="#tentang">Tentang</a><a href="#galeri">Galeri</a><a href="#lokasi">Lokasi</a><a href="./feedback.html">Penilaian</a></nav><a class="button compact" href="#booking">Booking</a></header>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Hairmagic Barbershop">
+    <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+    <span class="brand-type"><b>HAIRMAGIC</b><small>BARBERSHOP</small></span>
+  </a>
+  <nav aria-label="Navigasi utama">
+    <a href="#layanan">Layanan</a>
+    <a href="#booking">Booking</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#lokasi">Lokasi</a>
+    <a href="./feedback.html">Penilaian</a>
+  </nav>
+  <a class="nav-cta" href="#booking">BOOKING <span>↗</span></a>
+</header>
+
 <main id="content">
-<section id="top" class="hero"><div class="eyebrow">BARBERSHOP / EST. 2023</div><h1>Hairmagic Barbershop</h1><p class="hero-line">Gaya punya kamu.<br><em>Magic dari kami.</em></p><p>Dari potongan rutin sampai eksplorasi warna. Duduk santai, biarkan kami mengerjakan detailnya.</p><div class="actions"><a class="button" href="#booking">Booking sekarang</a><a class="button ghost" href="#layanan">Lihat layanan</a></div><div id="hero-media" class="hero-media" aria-live="polite"></div></section>
-<section class="experience"><div><span>THE HAIRMAGIC EXPERIENCE</span><b>01</b></div><div class="experience-stage"><p>HAIRCUTS & SHAVES</p><h2>Di sinilah magic-nya.</h2><strong>YOUR HAIR. OUR MAGIC.</strong></div><div class="stats"><article><small>HAIRCUT MULAI</small><b>Rp 40 rb</b></article><article><small>KAPSTER PILIHAN</small><b>03</b></article><article><small>DURASI HAIRCUT</small><b>40 menit</b></article></div></section>
-<section id="layanan" class="section"><div class="section-no">01</div><div><div class="eyebrow">LAYANAN</div><h2>Pilih gayamu.<br>Kami urus detailnya.</h2><p>Dari potongan rutin sampai tampilan baru. Lihat pilihan layanan dan harga sebelum reservasi.</p><div class="service-tabs"><span>Haircut</span><span>Coloring</span><span>Perm</span><span>Perawatan</span></div><article class="service-card"><small>THE EVERYDAY ESSENTIAL</small><h3>Haircut</h3><p>Pilih kapster favoritmu, atau percayakan pilihan pada kasir.</p><p><b>40 menit per sesi</b></p><div class="price-grid"><span>Abibayu <b>Rp 40.000</b></span><span>Rival <b>Rp 40.000</b></span><span>Umar <b>Rp 60.000</b></span></div><p>Tambahan layanan: Keramas Rp10.000 · Shaving Rp10.000</p><a class="button" href="#booking">Booking haircut</a></article></div></section>
-<section id="booking" class="section booking-section"><div class="section-no">02</div><div><div class="eyebrow">RESERVASI</div><h2>Waktu cukur,<br>sesuai rencanamu.</h2><p>Pilih jadwal haircut, isi kontak, lalu teruskan ringkasannya ke WhatsApp untuk konfirmasi kasir.</p><div class="booking-meta"><b>Booking haircut</b><span>Rp40.000–Rp60.000</span><span>40 menit</span></div><form id="booking-form" class="form-card"><h3>01 · Pilih jadwal</h3><label>Kapster opsional<select id="booking-barber" name="barber"><option value="">Bebas, sesuai ketersediaan</option><option>Abibayu</option><option>Rival</option><option>Umar</option></select><small>Kasir akan membantu memilihkan kapster.</small></label><div class="form-grid"><label>Tanggal<input id="booking-date" name="date" type="date" required><small>Selasa–Minggu. Minimal 5 jam sebelum cukur.</small></label><label>Jam kunjungan WITA<select id="booking-time" name="time" required><option value="">Pilih tanggal untuk melihat jam yang tersedia</option></select></label></div><h3>02 · Kontak kamu</h3><div class="form-grid"><label>Nama<input name="name" autocomplete="name" required></label><label>Nomor WhatsApp<input name="phone" inputmode="tel" autocomplete="tel" required></label></div><label>Catatan opsional<textarea name="notes" rows="3"></textarea></label><button class="button" type="submit">Kirim permintaan booking</button><p id="booking-status" class="form-status">Jadwal final setelah dikonfirmasi kasir melalui WhatsApp.</p></form><div class="booking-notes"><article><b>Booking lebih awal</b><p>Minimal 5 jam sebelum cukur.</p></article><article><b>Konfirmasi dari kasir</b><p>Jadwal final setelah dikonfirmasi melalui WhatsApp.</p></article><article><b>Perlu ubah jadwal?</b><p>Hubungi kasir paling lambat 1 jam sebelum cukur.</p></article><article><b>Toleransi kedatangan</b><p>Maksimal 10 menit dari jadwal.</p></article></div></div></section>
-<section id="tentang" class="section"><div class="section-no">03</div><div><div class="eyebrow">TENTANG HAIRMAGIC</div><h2>Datang untuk cukur.<br>Pulang lebih percaya diri.</h2><p>Sejak 2023, Hairmagic menjadi ruang untuk merapikan gaya dan mencoba hal baru. Ceritakan potongan yang kamu inginkan, lalu biarkan kapster kami mengerjakan detailnya.</p><ul class="feature-list"><li>Haircut untuk dewasa dan anak</li><li>Pilih kapster sesuai preferensi</li><li>Coloring, perm, dan perawatan rambut</li></ul></div></section>
-<section id="galeri" class="gallery-section"><div class="eyebrow">DI DALAM HAIRMAGIC</div><h2>Detail kecil. Perhatian penuh.</h2><p>Dari pelanggan kecil sampai dewasa, setiap potongan punya ceritanya sendiri.</p><div id="gallery-grid" class="gallery-grid"><figure class="gallery-card fallback"><div>01 / IN THE CHAIR</div><figcaption>Detail kecil. Perhatian penuh.</figcaption></figure><figure class="gallery-card fallback"><div>02 / HAIRMAGIC</div><figcaption>Tempat untuk jadi diri sendiri.</figure></div></section>
-<section id="lokasi" class="section location"><div class="section-no">04</div><div><div class="eyebrow">KUNJUNGI KAMI</div><h2>Hairmagic Barbershop.</h2><p>Sudah siap untuk potongan baru? Temukan kami lewat Google Maps.</p><div class="location-card"><div><b>Hairmagic Barbershop</b><p>Jl. Belibis Raya No. 06</p><p>Selasa–Minggu 10.00–22.00 WITA�br>Senin Libur<br>Istirahat 12.00–13.00 & 18.00–19.00</p></div><div class="actions"><a class="button" href="https://www.google.com/maps/search/?api=1&query=Hairmagic+Barbershop+Jl.+Belibis+Raya+No.+06" target="_blank" rel="noopener">Petunjuk arah</a><a class="button ghost" href="https://wa.me/62895374034221" target="_blank" rel="noopener">WhatsApp</a></div></div></div></section>
+  <section id="top" class="hero">
+    <div class="hero-copy">
+      <div class="kicker"><span>BARBERSHOP</span><b>/</b><span>EST. 2023</span></div>
+      <h1>Hairmagic<br>Barbershop</h1>
+      <p class="hero-line">Gaya punya kamu.<br><strong>Magic dari kami.</strong></p>
+      <p class="hero-desc">Dari potongan rutin sampai eksplorasi warna. Duduk santai, biarkan kami mengerjakan detailnya.</p>
+      <div class="hero-actions">
+        <a class="cta cta-primary" href="#booking">Booking sekarang <span>↗</span></a>
+        <a class="cta cta-text" href="#layanan">Lihat layanan <span>↓</span></a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div id="hero-media" class="hero-media" aria-live="polite">
+        <div class="hero-media-fallback" aria-hidden="true">
+          <span class="visual-index">01</span>
+          <div class="visual-lines"></div>
+          <p>YOUR HAIR.<br><strong>OUR MAGIC.</strong></p>
+        </div>
+      </div>
+      <div class="hero-visual-label">
+        <span>HAIRCUTS & SHAVES</span>
+        <span>BALIKPAPAN</span>
+      </div>
+    </div>
+
+    <div class="hero-edge hero-edge-blue"></div>
+    <div class="hero-edge hero-edge-red"></div>
+  </section>
+
+  <section class="experience">
+    <div class="section-cap">
+      <span>THE HAIRMAGIC EXPERIENCE</span>
+      <b>01</b>
+    </div>
+    <div class="experience-stage">
+      <div class="experience-copy">
+        <span>HAIRCUTS & SHAVES</span>
+        <h2>Di sinilah<br>magic-nya.</h2>
+        <strong>YOUR HAIR. OUR MAGIC.</strong>
+      </div>
+      <div class="experience-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <div class="stats">
+      <article><small>HAIRCUT MULAI</small><b>Rp 40 rb</b></article>
+      <article><small>KAPSTER PILIHAN</small><b>03</b></article>
+      <article><small>DURASI HAIRCUT</small><b>40 menit</b></article>
+    </div>
+  </section>
+
+  <section id="layanan" class="section section-dark">
+    <aside class="section-no">01</aside>
+    <div class="section-body">
+      <div class="eyebrow">LAYANAN</div>
+      <div class="section-title-row">
+        <h2>Pilih gayamu.<br><span>Kami urus detailnya.</span></h2>
+        <p>Dari potongan rutin sampai tampilan baru. Lihat pilihan layanan dan harga sebelum reservasi.</p>
+      </div>
+
+      <div class="service-tabs" aria-label="Kategori layanan">
+        <span class="active">Haircut</span><span>Coloring</span><span>Perm</span><span>Perawatan</span>
+      </div>
+
+      <article class="service-card">
+        <div class="service-card-copy">
+          <small>THE EVERYDAY ESSENTIAL</small>
+          <h3>Haircut</h3>
+          <p>Pilih kapster favoritmu, atau percayakan pilihan pada kasir.</p>
+          <div class="service-duration">40 <span>menit<br>per sesi</span></div>
+        </div>
+        <div class="service-prices">
+          <div class="price-head"><span>KAPSTER</span><span>HARGA HAIRCUT</span></div>
+          <div><span>Abibayu</span><b>Rp 40.000</b></div>
+          <div><span>Rival</span><b>Rp 40.000</b></div>
+          <div><span>Umar</span><b>Rp 60.000</b></div>
+          <p>Tambahan layanan <b>Keramas Rp10.000</b> · <b>Shaving Rp10.000</b></p>
+          <a class="cta cta-primary" href="#booking">Booking haircut <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="booking" class="section booking-section">
+    <aside class="section-no">02</aside>
+    <div class="section-body">
+      <div class="eyebrow">RESERVASI</div>
+      <div class="section-title-row">
+        <h2>Waktu cukur,<br><span>sesuai rencanamu.</span></h2>
+        <p>Pilih jadwal haircut, isi kontak, lalu teruskan ringkasannya ke WhatsApp untuk konfirmasi kasir.</p>
+      </div>
+
+      <div class="booking-meta">
+        <span><small>BOOKING</small><b>Haircut</b></span>
+        <span><small>HARGA</small><b>Rp40.000–Rp60.000</b></span>
+        <span><small>DURASI</small><b>40 menit</b></span>
+      </div>
+
+      <div class="booking-layout">
+        <form id="booking-form" class="form-card">
+          <div class="form-step"><b>01</b><span>Pilih jadwal</span></div>
+          <label>Kapster opsional
+            <select id="booking-barber" name="barber">
+              <option value="">Bebas, sesuai ketersediaan</option>
+              <option>Abibayu</option><option>Rival</option><option>Umar</option>
+            </select>
+            <small>Kasir akan membantu memilihkan kapster.</small>
+          </label>
+          <div class="form-grid">
+            <label>Tanggal
+              <input id="booking-date" name="date" type="date" required>
+              <small>Selasa–Minggu. Minimal 5 jam sebelum cukur.</small>
+            </label>
+            <label>Jam kunjungan WITA
+              <select id="booking-time" name="time" required>
+                <option value="">Pilih tanggal untuk melihat jam yang tersedia</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-step second"><b>02</b><span>Kontak kamu</span></div>
+          <div class="form-grid">
+            <label>Nama<input name="name" autocomplete="name" placeholder="Nama" required></label>
+            <label>Nomor WhatsApp<input name="phone" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" required></label>
+          </div>
+          <label>Catatan opsional<textarea name="notes" rows="3" placeholder="Catatan opsional"></textarea></label>
+          <button class="cta cta-primary form-submit" type="submit">Kirim permintaan booking <span>↗</span></button>
+          <p id="booking-status" class="form-status">Jadwal final setelah dikonfirmasi kasir melalui WhatsApp.</p>
+        </form>
+
+        <aside class="booking-help">
+          <div class="booking-help-head"><small>BUTUH BANTUAN?</small><a href="https://wa.me/62895374034221" target="_blank" rel="noopener">Chat Hairmagic ↗</a></div>
+          <article><b>Booking lebih awal</b><p>Minimal 5 jam sebelum cukur.</p></article>
+          <article><b>Konfirmasi dari kasir</b><p>Jadwal final setelah dikonfirmasi melalui WhatsApp.</p></article>
+          <article><b>Perlu ubah jadwal?</b><p>Hubungi kasir paling lambat 1 jam sebelum cukur.</p></article>
+          <article><b>Toleransi kedatangan</b><p>Maksimal 10 menit dari jadwal.</p></article>
+          <article class="booking-fast"><b>Mau cukur lebih cepat?</b><p>Chat kasir untuk menanyakan ketersediaan di luar booking online.</p><a href="https://wa.me/62895374034221" target="_blank" rel="noopener">Tanya lewat WhatsApp ↗</a></article>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang" class="section about-section">
+    <aside class="section-no">03</aside>
+    <div class="section-body about-grid">
+      <div>
+        <div class="eyebrow">TENTANG HAIRMAGIC</div>
+        <h2>Datang untuk cukur.<br><span>Pulang lebih percaya diri.</span></h2>
+      </div>
+      <div class="about-copy">
+        <p>Sejak 2023, Hairmagic menjadi ruang untuk merapikan gaya dan mencoba hal baru. Ceritakan potongan yang kamu inginkan, lalu biarkan kapster kami mengerjakan detailnya.</p>
+        <ul>
+          <li><span>01</span> Haircut untuk dewasa dan anak</li>
+          <li><span>02</span> Pilih kapster sesuai preferensi</li>
+          <li><span>03</span> Coloring, perm, dan perawatan rambut</li>
+        </ul>
+        <a href="https://www.instagram.com/hairmagic_barbershop" target="_blank" rel="noopener">Instagram Hairmagic ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeri" class="gallery-section">
+    <div class="gallery-head">
+      <div><div class="eyebrow">DI DALAM HAIRMAGIC</div><h2>Detail kecil.<br><span>Perhatian penuh.</span></h2></div>
+      <p>Dari pelanggan kecil sampai dewasa, setiap potongan punya ceritanya sendiri.</p>
+    </div>
+
+    <div class="gallery-shell">
+      <div id="gallery-grid" class="gallery-stage" aria-live="polite">
+        <figure class="gallery-slide fallback is-active">
+          <div class="gallery-fallback"><span>01 / IN THE CHAIR</span><b>HAIRMAGIC</b></div>
+          <figcaption>Detail kecil. Perhatian penuh.</figcaption>
+        </figure>
+        <figure class="gallery-slide fallback">
+          <div class="gallery-fallback alt"><span>02 / HAIRMAGIC</span><b>BARBERSHOP</b></div>
+          <figcaption>Tempat untuk jadi diri sendiri.</figcaption>
+        </figure>
+      </div>
+      <div class="gallery-status">
+        <span id="gallery-count">01 / 02</span>
+        <span id="gallery-caption">Detail kecil. Perhatian penuh.</span>
+        <i class="gallery-progress" aria-hidden="true"></i>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokasi" class="section location-section">
+    <aside class="section-no">04</aside>
+    <div class="section-body">
+      <div class="eyebrow">KUNJUNGI KAMI</div>
+      <div class="section-title-row">
+        <h2>Hairmagic<br><span>Barbershop.</span></h2>
+        <p>Sudah siap untuk potongan baru? Temukan kami lewat Google Maps.</p>
+      </div>
+
+      <div class="location-card">
+        <div class="location-main">
+          <small>HAIRMAGIC BARBERSHOP</small>
+          <h3>Jl. Belibis Raya<br>No. 06</h3>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hairmagic+Barbershop+Jl.+Belibis+Raya+No.+06" target="_blank" rel="noopener">Petunjuk arah ↗</a>
+        </div>
+        <div class="location-info">
+          <div><small>JAM BUKA</small><b>Selasa–Minggu</b><span>10.00–22.00 WITA</span><em>Senin Libur</em></div>
+          <div><small>ISTIRAHAT</small><b>12.00–13.00</b><b>18.00–19.00</b></div>
+          <div><small>WHATSAPP</small><a href="https://wa.me/62895374034221" target="_blank" rel="noopener">0895 3740 34221 ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div><b>Hairmagic.</b><p>Haircuts & shaves. Made personal, since 2023.</p></div><div><a href="https://www.instagram.com/hairmagic_barbershop" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/62895374034221" target="_blank" rel="noopener">WhatsApp</a><a href="./feedback.html">Beri penilaian</a><a href="./owner.html">Ruang owner</a></div><small>© 2026 Hairmagic Barbershop</small></footer>
-</body></html>
+
+<footer>
+  <div class="footer-brand"><span>Hairmagic.</span><p>Haircuts & shaves.<br>Made personal, since 2023.</p></div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/hairmagic_barbershop" target="_blank" rel="noopener">Instagram ↗</a>
+    <a href="https://wa.me/62895374034221" target="_blank" rel="noopener">WhatsApp ↗</a>
+    <a href="./feedback.html">Beri penilaian ↗</a>
+    <a href="./owner.html">Ruang owner ↗</a>
+  </div>
+  <div class="footer-bottom"><small>© 2026 Hairmagic Barbershop</small><a href="#top">Kembali ke atas ↑</a></div>
+</footer>
+</body>
+</html>
