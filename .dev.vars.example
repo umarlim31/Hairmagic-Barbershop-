@@ -1,0 +1,6 @@
+# Local preview only. Production secrets belong in hosting environment settings.
+DATA_BACKEND=d1
+OWNER_AUTH_MODE=disabled
+FEEDBACK_OWNER_EMAIL=
+SUPABASE_URL=
+SUPABASE_SECRET_KEY=

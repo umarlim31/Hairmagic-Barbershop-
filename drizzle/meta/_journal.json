@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1788937942026,
+      "tag": "0000_striped_iron_patriot",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1789623718528,
+      "tag": "0001_great_ink",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Geist font, provided by the Geist Project Authors.
+Source: the installed Next.js distribution.
+
+Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font.git)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org
+
+https://openfontlicense.org

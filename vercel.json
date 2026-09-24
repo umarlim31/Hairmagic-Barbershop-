@@ -1,8 +1,18 @@
 {
-  "version": 2,
+  "framework": "nextjs",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "npm install --no-audit --no-fund",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "outputDirectory": ".next",
+  "installCommand": "npm ci",
+  "redirects": [
+    {
+      "source": "/owner.html",
+      "destination": "/owner/feedback",
+      "permanent": false
+    },
+    {
+      "source": "/feedback.html",
+      "destination": "/penilaian",
+      "permanent": false
+    }
+  ]
 }

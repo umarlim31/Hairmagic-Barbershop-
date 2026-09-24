@@ -1,11 +1,1 @@
-{
-  "name": "Hairmagic Website",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
-  "postCreateCommand": "npm install",
-  "forwardPorts": [4173],
-  "customizations": {
-    "vscode": {
-      "extensions": ["dbaeumer.vscode-eslint"]
-    }
-  }
-}
+{"name":"Hairmagic Next.js","image":"mcr.microsoft.com/devcontainers/javascript-node:1-24-bookworm","postCreateCommand":"npm ci","forwardPorts":[3000],"portsAttributes":{"3000":{"label":"Hairmagic preview","onAutoForward":"notify"}}}
