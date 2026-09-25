@@ -5,6 +5,7 @@ import { BrandFilm } from "./brand-film";
 import { ServiceMenu } from "./service-menu";
 import { PageMotion } from "./page-motion";
 import { Gallery } from "./gallery";
+import { TeamMoments } from "./team-moments";
 import { BARBERS } from "@/lib/booking-config";
 import { SHOP_NAME, SHOP_ADDRESS, MAPS_URL, MAPS_EMBED_URL, INSTAGRAM_URL, whatsappLink } from "@/lib/site-config";
 
@@ -70,13 +71,36 @@ export default function Home() {
         <section className="hm-about-section hm-container" id="about" aria-labelledby="about-title">
           <div className="hm-about-intro" data-reveal>
             <div><p className="hm-eyebrow"><span className="hm-section-index">03</span> TENTANG HAIRMAGIC</p><h2 id="about-title">Datang untuk cukur.<br /><span className="hm-heading-secondary">Pulang lebih percaya diri.</span></h2></div>
-            <div className="hm-about-text"><p>Sejak 2023, Hairmagic menjadi ruang untuk merapikan gaya dan mencoba hal baru. Ceritakan potongan yang kamu inginkan, lalu biarkan kapster kami mengerjakan detailnya.</p><ul><li><Check aria-hidden="true" /> Haircut untuk dewasa dan anak</li><li><Check aria-hidden="true" /> Pilih kapster sesuai preferensi</li><li><Check aria-hidden="true" /> Coloring, perm, dan perawatan rambut</li></ul></div>
+            <div className="hm-about-text">
+              <p>Sejak 2023, Hairmagic tumbuh dengan satu keyakinan sederhana: pengalaman yang baik bukan hanya soal hasil potongan rambut.</p>
+              <p>Kami ingin setiap orang yang datang merasa nyaman, didengarkan, dan pulang dengan penampilan yang membuat mereka lebih percaya diri.</p>
+              <p>Tapi Hairmagic juga dibangun oleh orang-orang di balik kursi barber. Karena itu, kami ingin tempat ini menjadi lingkungan yang menyenangkan untuk bekerja, berkembang, dan bertumbuh bersama.</p>
+              <p>Kami bekerja bersama, belajar bersama, dan sesekali meninggalkan kursi barber untuk jalan-jalan dan menikmati waktu sebagai satu tim.</p>
+              <p>Karena bagi kami, Hairmagic bukan hanya tentang merawat rambut.</p>
+              <p className="hm-about-emphasis">Kami merawat orang-orangnya juga.</p>
+              <ul>
+                <li><Check aria-hidden="true" /> Pelayanan yang nyaman dan personal</li>
+                <li><Check aria-hidden="true" /> Kapster yang terus berkembang bersama</li>
+                <li><Check aria-hidden="true" /> Tim yang bekerja, tumbuh, dan menikmati perjalanan bersama</li>
+              </ul>
+            </div>
           </div>
           <div className="hm-gallery-heading" id="gallery"><h3>Di dalam Hairmagic</h3><a className="hm-inline-link" href={INSTAGRAM_URL} target="_blank" rel="noreferrer"><Camera aria-hidden="true" /> Instagram <ArrowUpRight aria-hidden="true" /></a></div>
           <Gallery />
         </section>
+        <section className="hm-team-section hm-container" id="team" aria-labelledby="team-title">
+          <div className="hm-section-heading" data-reveal>
+            <div><p className="hm-eyebrow"><span className="hm-section-index">04</span> OUR TEAM</p><h2 id="team-title">Bukan cuma tempat kerja.<br /><span className="hm-heading-secondary">Ini tim Hairmagic.</span></h2></div>
+            <p>Di balik setiap potongan rambut, ada tim yang tumbuh bersama. Dari hari-hari sibuk di barbershop sampai perjalanan dan momen seru di luar Hairmagic—semuanya menjadi bagian dari cerita kami.</p>
+          </div>
+          <TeamMoments />
+          <div className="hm-team-closing">
+            <p>Good hair starts with a <span>good team.</span></p>
+            <a className="hm-inline-link" href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Lihat keseharian Hairmagic di Instagram <ArrowUpRight aria-hidden="true" /></a>
+          </div>
+        </section>
         <section className="hm-location-section hm-container" id="location" aria-labelledby="location-title">
-          <div className="hm-section-heading" data-reveal><div><p className="hm-eyebrow"><span className="hm-section-index">04</span> KUNJUNGI KAMI</p><h2 id="location-title">Hairmagic Barbershop<span className="hm-brand-period">.</span></h2></div><p>Sudah siap untuk potongan baru?<br />Temukan kami lewat Google Maps.</p></div>
+          <div className="hm-section-heading" data-reveal><div><p className="hm-eyebrow"><span className="hm-section-index">05</span> KUNJUNGI KAMI</p><h2 id="location-title">Hairmagic Barbershop<span className="hm-brand-period">.</span></h2></div><p>Sudah siap untuk potongan baru?<br />Temukan kami lewat Google Maps.</p></div>
           <div className="hm-location-card">
             <div className="hm-location-details">
               <p className="hm-location-name"><MapPin aria-hidden="true" /> {SHOP_NAME}</p>
