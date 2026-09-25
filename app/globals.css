@@ -273,6 +273,8 @@ input.hm-control[type="date"] { display: block; appearance: auto; }
 .hm-about-section { padding-block: 4.5rem; }
 .hm-about-intro { display: grid; grid-template-columns: minmax(0,1fr); gap: 1.75rem; }
 .hm-about-text > p { color: #a7b1c1; line-height: 1.8; }
+.hm-about-text > p + p { margin-top: 1rem; }
+.hm-about-text > p.hm-about-emphasis { color: var(--hm-text); font-weight: 600; }
 .hm-about-text ul { list-style: none; display: grid; gap: .75rem; margin: 1.5rem 0 0; padding: 0; }
 .hm-about-text li { display: flex; gap: .6rem; align-items: flex-start; font-size: .9375rem; color: #c4cddc; }
 .hm-about-text li svg { width: 1rem; height: 1rem; color: #6f9ada; margin-top: .3rem; }
@@ -287,6 +289,21 @@ input.hm-control[type="date"] { display: block; appearance: auto; }
 .hm-gallery-grid figcaption { display: grid; gap: .25rem; margin-top: 1rem; }
 .hm-gallery-grid figcaption span { color: #8292a9; font-size: .75rem; letter-spacing: .08em; }
 .hm-gallery-grid figcaption strong { color: #dfe6f1; font-size: .9375rem; font-weight: 500; }
+.hm-team-section { padding-block: 4.5rem; border-top: 1px solid var(--hm-line); }
+.hm-team-section .hm-section-heading { margin-bottom: 2.25rem; }
+.hm-team-gallery { display: flex; gap: 1rem; min-width: 0; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-padding-inline: .2rem; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; padding: .2rem .2rem 1rem; scrollbar-width: none; }
+.hm-team-gallery::-webkit-scrollbar { display: none; }
+.hm-team-card { flex: 0 0 82%; max-width: 26rem; min-width: 0; scroll-snap-align: start; }
+.hm-team-photo { position: relative; width: 100%; aspect-ratio: 3/4; overflow: hidden; border: 1px solid #313c4c; border-radius: .9rem; background: #1b2029; }
+.hm-team-photo img { object-fit: cover; transition: transform .7s var(--hm-ease); }
+.hm-team-card figcaption { display: grid; gap: .25rem; margin-top: .9rem; }
+.hm-team-card figcaption span { color: #95a6bc; font-size: .75rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+.hm-team-card figcaption strong { color: #e9edf3; font-size: 1rem; font-weight: 600; line-height: 1.45; }
+.hm-team-card figcaption p { color: #a7b1c1; font-size: .875rem; line-height: 1.65; }
+.hm-team-closing { display: grid; gap: 1rem; margin-top: 2.25rem; padding-top: 1.5rem; border-top: 1px solid var(--hm-line); }
+.hm-team-closing > p { color: #e9edf3; font-size: clamp(1.125rem,3.5vw,1.5rem); font-weight: 550; line-height: 1.4; letter-spacing: -.02em; }
+.hm-team-closing > p span { color: var(--hm-display-red); }
+.hm-team-closing > a { width: fit-content; min-height: 2.75rem; }
 .hm-location-section { padding-block: 3rem 4.5rem; border-top: 1px solid var(--hm-line); }
 .hm-location-card { display: grid; grid-template-columns: minmax(0,1fr); border: 1px solid #303c4e; border-radius: 1rem; overflow: hidden; background: #131b27; }
 .hm-location-details { padding: 1.5rem; }
@@ -472,6 +489,7 @@ input.hm-control[type="date"] { display: block; appearance: auto; }
   .hm-hero-service-link:hover svg { transform: translateY(3px); }
   .hm-hero-service-link:hover { color: #fff; text-decoration-color: var(--hm-display-red); }
   .hm-gallery-image:hover img { transform: scale(1.035); }
+  .hm-team-photo:hover img { transform: scale(1.035); }
   .hm-service-tab:not([data-state="active"]):hover { color: #fff; background: #243a5c; }
 }
 
@@ -521,6 +539,10 @@ input.hm-control[type="date"] { display: block; appearance: auto; }
   .hm-gallery-grid { grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: 1.5rem; }
   .hm-gallery-image { aspect-ratio: auto; height: 30rem; }
   .hm-gallery-heading { margin-top: 3.5rem; }
+  .hm-team-section { padding-block: 5.5rem; }
+  .hm-team-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; overflow: visible; padding: 0; scroll-snap-type: none; }
+  .hm-team-card { max-width: none; }
+  .hm-team-closing { grid-template-columns: 1fr auto; align-items: center; gap: 2rem; margin-top: 3rem; }
   .hm-location-section { padding-block: 4rem 5.5rem; }
   .hm-location-details { padding: 2.25rem; }
   .hm-footer-main { grid-template-columns: 1.3fr 1fr 1fr; align-items: center; gap: 2rem; }
@@ -561,7 +583,7 @@ input.hm-control[type="date"] { display: block; appearance: auto; }
   .hm-booking-layout { grid-template-columns: minmax(0,1.65fr) minmax(0,.85fr); gap: 3rem; }
   .hm-booking-guide { display: block; padding: .5rem 0; }
   .hm-booking-form, .hm-booking-success { padding: 2.5rem; }
-  .hm-about-intro { grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); gap: 4rem; align-items: center; }
+  .hm-about-intro { grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); gap: 4rem; align-items: start; }
   .hm-location-card { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); }
   .hm-map-panel iframe { height: 100%; min-height: 27rem; }
 }
